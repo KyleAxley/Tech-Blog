@@ -20,6 +20,9 @@ const sess = {
     })
 };
 
+// //create user session
+app.use(session(sess));
+
 const hbs = exphbs.create({});
 //initialize handlebars
 app.engine('handlebars', hbs.engine);
@@ -29,8 +32,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//create user session
-app.use(session(sess));
+
+// //turn on routes
+// app.use(routes);
 
 
 //turn on connection to db and server
