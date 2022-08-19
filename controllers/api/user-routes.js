@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User, Comment, Post} = require('../../models');
 
+//CRUD, create(post), recieve(get), update(put), delete(delete).
+
 router.get('/', (req, res) => {
 
 });

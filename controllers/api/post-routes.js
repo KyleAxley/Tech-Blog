@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, Comment, User } = require('../../models');
 
+//CRUD, create(post), recieve(get), update(put), delete(delete).
 
 router.get('/', (req, res) => {
 
