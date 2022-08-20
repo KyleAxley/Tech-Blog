@@ -1,11 +1,40 @@
 const router = require("express").Router();
-const { Comment } = require("../../models");
+const { Comment, Post, User } = require("../../models");
 
 //CRUD, create(post), recieve(get), update(put), delete(delete).
 
 //route to find all comments
 router.get("/", (req, res) => {
   Comment.findAll()
+    .then((dbCommentData) => res.json(dbCommentData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//route to find comments by id
+router.get("/:id", (req, res) => {
+  Comment.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "comment_text"],
+    ibclude: [
+      {
+        model: Post,
+        attributes: ["id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
       console.log(err);
@@ -21,6 +50,28 @@ router.post("/", (req, res) => {
     post_id: req.body.post_id,
   })
     .then((dbCommentData) => res.json(dbCommentData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//route to update a comment
+router.put("/:id", (req, res) => {
+  Comment.update({
+    where: {
+      id: req.params,
+    },
+  })
+    .then((dbCommentData) => {
+      if (!dbCommentData) {
+        res
+          .status(404)
+          .json({ message: "There is no comment found by this id!" });
+        return;
+      }
+      res.json(dbCommentData);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
