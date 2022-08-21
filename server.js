@@ -21,7 +21,7 @@ const sess = {
     })
 };
 
-// //create user session
+//create user session
 app.use(session(sess));
 
 
@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// //turn on routes
+//turn on routes
 app.use(routes);
 
 
