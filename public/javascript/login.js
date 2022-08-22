@@ -21,7 +21,7 @@ async function loginFormHandler(event) {
       alert(response.statusText);
     }
   }
-  console.log("confirmed click");
+  // console.log("confirmed click");
 }
 
 document

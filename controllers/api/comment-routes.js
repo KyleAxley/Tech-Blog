@@ -5,7 +5,23 @@ const { Comment, Post, User } = require("../../models");
 
 //route to find all comments
 router.get("/", (req, res) => {
-  Comment.findAll()
+  Comment.findAll({
+    attributes: ["id", "comment_text"],
+    include: [
+      {
+        model: Post,
+        attributes: ["id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
       console.log(err);
@@ -58,11 +74,16 @@ router.post("/", (req, res) => {
 
 //route to update a comment
 router.put("/:id", (req, res) => {
-  Comment.update({
-    where: {
-      id: req.params,
+  Comment.update(
+    {
+      comment_text: req.body.comment_text,
     },
-  })
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((dbCommentData) => {
       if (!dbCommentData) {
         res

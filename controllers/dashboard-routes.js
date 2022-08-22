@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   console.log("======================");
   Post.findAll({
     where: {
-      user_id: req.sess.user_id,
+      user_id: req.session.user_id,
     },
     attributes: ["id", "post_url", "title", "created_at"],
     include: [
@@ -28,11 +28,15 @@ router.get("/", (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("dashboard", { post, loggedIn: true });
+      res.render("dashboard", { posts, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
+
+router.get('/edit/:id', (req, res) =>{
+
+})
 module.exports = router;
