@@ -5,7 +5,6 @@
     --black: rgb(29, 35, 35);
 }
 
-
 * {
     box-sizing: border-box;
   }
@@ -77,6 +76,34 @@ html {
   .card-link {
     color:var(--black);
     font-weight: bold;
+  }
+
+  #email-login {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  #password-login{
+    color: var(--black);
+    font-size: x-large;
+  }
+
+  #username-signup {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  #email-signup {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  #password-signup {
+    color: var(--black);
+    font-size: x-large;
   }
 
   footer {
