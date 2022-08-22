@@ -52,7 +52,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-//route to find posts created by all users
+//route to create new user
 router.post("/", (req, res) => {
       // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
@@ -75,7 +75,7 @@ router.post("/", (req, res) => {
     });
 });
 
-//route to check if user is logged in or not
+//route to login user
 router.post("/login", (req, res) => {
     User.findOne({
         where: {
@@ -103,6 +103,7 @@ router.post("/login", (req, res) => {
     });
 });
 
+//route to logout user
 router.post("/logout", (req, res) => {
     if(req.session.loggedIN) {
         req.session.destroy(() => {

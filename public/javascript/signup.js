@@ -17,13 +17,14 @@ async function signupFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace("/dashboard");
+        document.location.replace("/dashboard/");
       } else {
         alert(response.statusText);
       }
     }
+    console.log("confirmed click");
   }
 
   document
   .querySelector(".signup-form")
-  .addEventListener("submit", loginFormHandler);
+  .addEventListener("submit", signupFormHandler);
