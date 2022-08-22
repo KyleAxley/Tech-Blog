@@ -20,17 +20,24 @@
                         <a href="/">Tech Blog</a>
                     </h1>
                     <nav class="nav justify-content-end align-items-center">
-                        <a href="/login" class="nav-link">Login</a>
-                        <a href="/" class="nav-link">Logout</a>
-                        <a href="/dashboard" class="nav-link">Dashboard</a>
                         <a href="/" class="nav-link">Homepage</a>
+                        {{#if loggedIn}}
+                        <a href="/dashboard" class="nav-link">Dashboard</a>
+                        <a href="/" class="nav-link">Logout</a>
+                        {{else}}
+                        <a href="/login" class="nav-link">Login</a>
+                        <a href="/signup" class="nav-link">Sign up</a>
+                        {{/if}}
                     </nav>
 
                 </div>
             </header>
-            <main class="container-fluid">
+            <main class="container-lg row">
                 {{{ body }}}
             </main>
+            {{#if loggedIn}}
+            <script src="/javascript/logout.js"></script>
+            {{/if}}
             <footer>
                 Thanks for hanging out!
             </footer>

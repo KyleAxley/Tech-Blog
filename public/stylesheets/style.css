@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+:root {
+    --gold: rgb(238, 238, 7);
+    --beige: #d6d5b6;
+    --black: rgb(29, 35, 35);
+}
+
 
 * {
     box-sizing: border-box;
   }
 
 body {
-    background-color: rgb(29, 35, 35);
+    background-color: var(--black);
     font-family: 'Alumni Sans Pinstripe', sans-serif;
     font-size: x-large;
 }
@@ -15,39 +21,39 @@ html {
     padding: 0;
     margin: 0;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
-    color: rgb(211, 197, 197);
+    color: var(--beige);
   }
 
   a {
     text-decoration: none;
-    color: #d6d5b6;
+    color: var(--beige);
     font-weight: bold;
     transition: color .1s;
   }
   
   a:hover {
-    color: rgb(238, 238, 7);
+    color: var(--gold);
   }
 
   .nav-link {
-    color:#d6d5b6;
+    color:var(--beige);
     font-weight: bold;
   }
 
   .nav-link:hover{
-    color: rgb(238, 238, 7);
+    color: var(--gold);
   }
   
   label {
-    color: #d6d5b6; 
+    color: var(--black); 
     font-weight: bold;
   }
 
   button {
-    background-color:#d6d5b6;
+    background-color:var(--black);
     border: 0;
     padding: 1%;
-    color: rgb(29, 35, 35);
+    color: var(--beige);
     font-weight: bold;
     transition: background-color .1s;
     cursor: pointer;
@@ -55,8 +61,22 @@ html {
   }
 
   button:hover {
-    background-color: rgb(238, 238, 7);
-    /* color: rgb(238, 238, 7); */
+    background-color: var(--gold);
+    color: var(--black);
+  }
+
+  .card {
+    background-color: var(--beige);
+  }
+
+  .card-title {
+    color:var(--black);
+    font-weight: bold;
+  }
+
+  .card-link {
+    color:var(--black);
+    font-weight: bold;
   }
 
   footer {
@@ -64,7 +84,7 @@ html {
     display: flex;
     justify-content: center;
     padding: 1%;
-    color: #d6d5b6;
+    color: var(--beige);
     font-weight: bold;
     font-size: 110%;
   }
