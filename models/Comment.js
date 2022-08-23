@@ -14,9 +14,6 @@ Comment.init(
     comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -30,6 +27,9 @@ Comment.init(
       references: {
         model: 'post',
         key: 'id'
+      },
+      validate: {
+        len: [1]
       }
     }
   },

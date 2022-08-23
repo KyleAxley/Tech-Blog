@@ -26,6 +26,7 @@ async function commentFormHandler(event) {
       alert(response.statusText);
     }
   }
+  console.log("confirmed click");
 }
 
 document

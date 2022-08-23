@@ -63,6 +63,31 @@ html {
     background-color: var(--gold);
     color: var(--black);
   }
+  
+  #button {
+    background-color:var(--beige);
+    border: 0;
+    padding: 1%;
+    color: var(--black);
+    font-weight: bold;
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  #button:hover{
+    background-color: var(--gold);
+  }
+
+  #comment-body {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  #comment-section {
+   font-size: x-large;
+   font-weight: bold;
+  }
 
   .card {
     background-color: var(--beige);
@@ -124,7 +149,23 @@ html {
     font-size: x-large;
   }
   
+  .post-title {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  .created-at {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
   footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: center;

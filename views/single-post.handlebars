@@ -1,5 +1,21 @@
-
-{{> post-info post}}
+<div class="card-group col-6">
+    <div class="card">
+        <div class="card-body">
+            <section class="container-fluid"></section>
+                <div class="post-info">
+                    <h2 class="post-title">{{post.title}}</h2>
+                    <h3 class="created-at">{{post.created_at}} by {{post.user.username}}</h3>
+                    <div class="separator"><hr></div>
+                </div>
+                <div class="post-text">
+                    {{post.post_text}}
+                    <div class="separator"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="separator"><hr></div>
 
 <section class="container-fluid mb-3" id="comment-box">
     <div class="row">
@@ -7,13 +23,21 @@
             {{#if loggedIn}}
             <form class="comment-form">
                 <div class="mb-3">
-                    <label for="comment-body" class="form-label">Leave a comment</label>
                     <textarea name="comment-body" id="comment-body" rows="3" class="form-control"></textarea>
+                    <button type="submit" id="button">add comment</button>
                 </div>
-                <button type="submit" class="btn">Comment</button>
             </form>
             {{/if}}
-{{> comments post.comments}}
+            <div class="comments mt-3" id="comment-section">
+                <ul class="list-group">
+            {{#each post.comments as |comment|}}
+                <li class="list-group-item">
+                    <p class="comment-text">{{comment.comment_text}}</p>
+                    <small>{{comment.created_at}} by {{comment.user.username}}</small>
+                </li>
+            {{/each}}
+                </ul>
+            </div>
         </div>
     </div>
 </section>
