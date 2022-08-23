@@ -89,6 +89,11 @@ html {
    font-weight: bold;
   }
 
+  .your-post {
+    color: var(--beige);
+    font-weight: bold;
+  }
+
   .card {
     background-color: var(--beige);
   }

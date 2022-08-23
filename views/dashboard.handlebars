@@ -9,8 +9,9 @@
                         <input type="text" class="form-control" id="post-title" name="post-title"/>
                     </div>
                     <div>
-                        <label for="post-url">URL Link</label>
-                        <input id="post-url" class="form-control" name="post-url"/>
+                        <label for="post-text">Text Area</label>
+                        <textarea title="label" name="post-title" id="post-content" class="form-control"></textarea>
+                        {{!-- <input id="post-url" class="form-control" name="post-url"/> --}}
                     </div>
                     <button type="submit" class="button">Create</button>
                 </form>
@@ -21,27 +22,27 @@
 
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2 class="your-post">Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
     <li>
       <div class="card-group col-6">
-    <div class="card">
-        <div class="card-body">
-            <section class="container-fluid"></section>
-                <div class="post-info">
-                    <h2 class="post-title">{{post.title}}</h2>
-                    <h3 class="created-at">{{post.created_at}} by {{post.user.username}}</h3>
-                    <div class="separator"><hr></div>
-                </div>
-                <div class="post-text">
-                    {{post.post_text}}
-                    <div class="separator"></div>
-                </div>
-            </section>
+        <div class="card">
+            <div class="card-body">
+                <section class="container-fluid"></section>
+                    <div class="post-info">
+                         <h2 class="post-title">{{post.title}}</h2>
+                         <h3 class="created-at">{{post.created_at}} by {{post.user.username}}</h3>
+                        <div class="separator"><hr></div>
+                    </div>
+                    <div class="post-text">
+                         {{post.post_text}}
+                        <div class="separator"></div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
-</div>
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}

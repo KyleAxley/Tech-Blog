@@ -8,6 +8,7 @@ const { Post, Comment, User } = require("../../models");
 router.get("/", (req, res) => {
   Post.findAll({
     attributes: ["id", "post_text", "title", "created_at"],
+    order: ['created_at', 'DESC'],
     include: [
       {
         model: Comment,
@@ -60,17 +61,17 @@ router.get("/:id", (req, res) => {
 });
 
 //route to create new post
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.session.user_id,
+      title: req.body.title,
+      post_text: req.body.post_text,
+      user_id: req.session.user_id
   })
-    .then((dbPostData) => res.json(dbPostData))
-    .catch((err) => {
+  .then(dbPostData => res.json(dbPostData))
+  .catch(err => {
       console.log(err);
       res.status(500).json(err);
-    });
+  });
 });
 
 //route to update post using post id
