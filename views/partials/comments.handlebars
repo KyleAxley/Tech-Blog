@@ -1,0 +1,10 @@
+<div class="comments mt-3">
+    <ul class="list-group">
+{{#each post.comments as |comment|}}
+    <li class="list-group-item">
+        <p class="comment-text">{{comment.comment_text}}</p>
+        <small>{{comment.created_at}} by {{comment.user.username}}</small>
+    </li>
+{{/each}}
+    </ul>
+</div>

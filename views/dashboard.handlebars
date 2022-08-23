@@ -1,15 +1,20 @@
-<section>
-    <h2>Get to Bloggin!</h2>
-
-    <form>
-        <div>
-            <label for="post-title">Blogs Title</label>
-            <input type="text" id="post-title" name="post-title"/>
+<div class="card-group col-6">
+    <div class="card">
+        <div class="card-body">
+            <section>
+                <h2 class="blog-header">Get to Bloggin!</h2>
+                <form class="new-post-form">
+                    <div>
+                        <label for="post-title">Blogs Title</label>
+                        <input type="text" class="form-control" id="post-title" name="post-title"/>
+                    </div>
+                    <div>
+                        <label for="post-url">URL Link</label>
+                        <input id="post-url" class="form-control" name="post-url"/>
+                    </div>
+                    <button type="submit" class="button">Create</button>
+                </form>
+            </section>
         </div>
-        <div>
-            <label for="post-url">Link</label>
-            <input id="post-url" name="post-url"/>
-        </div>
-        <button type="submit" class="btn">Post</button>
-    </form>
-</section>
+    </div>
+</div>

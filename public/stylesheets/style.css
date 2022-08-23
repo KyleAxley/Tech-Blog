@@ -106,6 +106,24 @@ html {
     font-size: x-large;
   }
 
+  .blog-header {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  #post-url {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  #post-title {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
   footer {
     border-top: 1px solid #ccc;
     display: flex;
