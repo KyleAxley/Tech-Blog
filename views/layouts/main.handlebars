@@ -23,7 +23,7 @@
                         <a href="/" class="nav-link">Homepage</a>
                         {{#if loggedIn}}
                         <a href="/dashboard" class="nav-link">Dashboard</a>
-                        <a href="/" class="nav-link">Logout</a>
+                        <a href="/" class="nav-link" id="logout">Logout</a>
                         {{else}}
                         <a href="/login" class="nav-link">Login</a>
                         <a href="/signup" class="nav-link">Sign up</a>
@@ -35,12 +35,12 @@
             <main class="container-lg row">
                 {{{ body }}}
             </main>
-            {{#if loggedIn}}
-            <script src="/javascript/logout.js"></script>
-            {{/if}}
             <footer>
                 Thanks for hanging out!
             </footer>
         </div>
+            {{#if loggedIn}}
+            <script src="/javascript/logout.js"></script>
+            {{/if}}
     </body>
 </html>

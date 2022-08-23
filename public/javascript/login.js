@@ -4,7 +4,7 @@ async function loginFormHandler(event) {
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
-  if (!email && password) {
+  if (email && password) {
     const response = await fetch("/api/users/login", {
       method: "post",
       body: JSON.stringify({
@@ -21,7 +21,7 @@ async function loginFormHandler(event) {
       alert(response.statusText);
     }
   }
-  // console.log("confirmed click");
+  console.log("confirmed click");
 }
 
 document
