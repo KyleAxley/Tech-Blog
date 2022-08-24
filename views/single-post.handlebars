@@ -1,21 +1,5 @@
-<div class="card-group col-6">
-    <div class="card">
-        <div class="card-body">
-            <section class="container-fluid"></section>
-                <div class="post-info">
-                    <h2 class="post-title">{{post.title}}</h2>
-                    <h3 class="created-at">{{post.created_at}} by {{post.user.username}}</h3>
-                    <div class="separator"><hr></div>
-                </div>
-                <div class="post-text">
-                    {{post.post_text}}
-                    <div class="separator"></div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
-<div class="separator"><hr></div>
+{{> post-info post}}
+
 
 <section class="container-fluid mb-3" id="comment-box">
     <div class="row">
@@ -28,16 +12,9 @@
                 </div>
             </form>
             {{/if}}
-            <div class="comments mt-3" id="comment-section">
-                <ul class="list-group">
-            {{#each post.comments as |comment|}}
-                <li class="list-group-item">
-                    <p class="comment-text">{{comment.comment_text}}</p>
-                    <small>{{comment.created_at}} by {{comment.user.username}}</small>
-                </li>
-            {{/each}}
-                </ul>
-            </div>
+
+{{> comments post.comment}}
+
         </div>
     </div>
 </section>
