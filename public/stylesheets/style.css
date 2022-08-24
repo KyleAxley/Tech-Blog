@@ -84,6 +84,10 @@ html {
     font-weight: bold;
   }
 
+  #add-comment{
+    color: var(--beige);
+  }
+
   #comment-section {
    font-size: x-large;
    font-weight: bold;
@@ -147,12 +151,7 @@ html {
     font-size: x-large;
   }
 
-  #post-url {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
-
+  
   #post-title {
     color: var(--black);
     font-weight: bold;
@@ -164,8 +163,32 @@ html {
     font-weight: bold;
     font-size: x-large;
   }
-
+  
   .created-at {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
+  .card-subtitle {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  .subtitle {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  .post-text {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  .comment-text {
     color: var(--black);
     font-weight: bold;
     font-size: x-large;

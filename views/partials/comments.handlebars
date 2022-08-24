@@ -3,7 +3,7 @@
         {{#each post.comments as |comment|}}
         <li class="list-group-item">
             <p class="comment-text">{{comment.comment_text}}</p>
-            <small>{{comment.created_at}} by {{comment.user.username}}</small>
+            <p>{{comment.created_at}} by {{comment.user.username}}</p>
         </li>
         {{/each}}
     </ul>
