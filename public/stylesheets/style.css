@@ -108,6 +108,11 @@ html {
     font-weight: bold;
   }
 
+  .edit-link {
+    color:var(--black);
+    font-weight: bold;
+  }
+
   #email-login {
     color: var(--black);
     font-weight: bold;
@@ -167,8 +172,8 @@ html {
   }
   
   footer {
-    position: fixed;
-    bottom: 0;
+    position: sticky;
+    /* bottom: 0; */
     text-align: center;
     width: 100%;
     border-top: 1px solid #ccc;

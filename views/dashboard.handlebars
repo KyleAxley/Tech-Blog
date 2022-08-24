@@ -21,34 +21,30 @@
 </div>
 
 {{#if posts.length}}
-<section>
     {{#each posts as |post|}}
   <h2 class="your-post">Your Posts</h2>
-  <ol>
     <li>
       <div class="card-group col-6">
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-body">
-                <section class="container-fluid"></section>
+                <article class="container-fluid">
                     <div class="post-info">
-                         <h2 class="post-title">{{post.title}}</h2>
-                         <h3 class="subtitle">{{post.created_at}} by {{post.user.username}}</h3>
+                         <p class="post-title">{{post.title}}</p>
+                         <p class="subtitle">{{post.created_at}} by {{post.user.username}}</p>
                          <p class="post-text">{{post.post_text}}</p>
                          <a href="/post/{{id}}">{{comments.length}} {{post.comments.length}} comment(s)</a>
-                        <div class="separator"><hr></div>
+                        <div class="separator"><hr></div> 
                     </div>
                     <div class="post-text">
                          {{post.post_text}}
                         <div class="separator"></div>
+                        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
                     </div>
-                </section>
+                </article>
             </div>
         </div>
-    </div>
-      {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
     </li>
+      
     {{/each}}
-  </ol>
-</section>
 {{/if}}
 <script src="/javascript/add-post.js"></script>
