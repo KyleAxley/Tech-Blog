@@ -6,12 +6,12 @@
                 <form class="new-post-form">
                     <div>
                         <label for="post-title">Blogs Title</label>
-                        <input type="text" class="form-control" id="post-title" name="post-title"/>
+                        <input type="text" class="form-control" id="post-title" name="post-title" />
                     </div>
                     <div>
                         <label for="post-content">Text Area</label>
                         <textarea title="label" name="post-content" id="post-content" class="form-control"></textarea>
-                        {{!-- <input id="post-url" class="form-control" name="post-url"/> --}}
+                        {{!-- <input id="post-url" class="form-control" name="post-url" /> --}}
                     </div>
                     <button type="submit" class="button">Create</button>
                 </form>
@@ -22,11 +22,10 @@
 
 {{#if posts.length}}
 {{#each posts as |post|}}
-  <h2 class="your-post">Your Posts</h2>
-    <li>
-        {{> post-info post}}
-    </li>
+<h2 class="your-post">Your Posts</h2>
+<li>
+    {{> post-info post}}
+</li>
 {{/each}}
 {{/if}}
 <script src="/javascript/add-post.js"></script>
-{{!-- <script src="/javascript/edit-post.js"></script> --}}

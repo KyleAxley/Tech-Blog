@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
 
 //homepage route
@@ -35,65 +35,62 @@ router.get("/", (req, res) => {
 });
 
 //route to find single post
-router.get('/post/:id', (req, res) => {
+router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: [
-      'id',
-      'post_text',
-      'title',
-      'created_at'
-    ],
+    attributes: ["id", "post_text", "title", "created_at"],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ["username"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res
+          .status(404)
+          .json({ message: "There is no post found with this id!" });
+        return;
       }
-    ]
-  })
-  .then(dbPostData => {
-    if(!dbPostData){
-      res.status(404).json({ message: 'There is no post found with this id!'});
-      return;
-    }
-     const post = dbPostData.get({ plain: true });
+      const post = dbPostData.get({ plain: true });
 
-     res.render('single-post', {
-      post, 
-      loggedIn: req.session.loggedIn
-     });
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+      res.render("single-post", {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 //login route
-router.get('/login', (req, res) => {
-  if(req.session.loggedIn) {
-    res.redirect('/');
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 //sign up route
-router.get('/signup', (req, res) => {
-  if(req.session.loggedIn) {
-    res.redirect('/');
+router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
     return;
   }
-  res.render('signup');
+  res.render("signup");
 });
 
 module.exports = router;

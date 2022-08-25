@@ -1,227 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap");
 :root {
-    --gold: rgb(238, 238, 7);
-    --beige: #d6d5b6;
-    --black: rgb(29, 35, 35);
+  --gold: rgb(238, 238, 7);
+  --beige: #d6d5b6;
+  --black: rgb(29, 35, 35);
 }
 
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
 body {
-    background-color: var(--black);
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
-    font-size: x-large;
+  background-color: var(--black);
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: x-large;
 }
 
 html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
-    color: var(--beige);
-  }
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  color: var(--beige);
+}
 
-  a {
-    text-decoration: none;
-    color: var(--beige);
-    font-weight: bold;
-    transition: color .1s;
-  }
-  
-  a:hover {
-    color: var(--gold);
-  }
+a {
+  text-decoration: none;
+  color: var(--beige);
+  font-weight: bold;
+  transition: color 0.1s;
+}
 
-  .nav-link {
-    color:var(--beige);
-    font-weight: bold;
-  }
+a:hover {
+  color: var(--gold);
+}
 
-  .nav-link:hover{
-    color: var(--gold);
-  }
-  
-  label {
-    color: var(--black); 
-    font-weight: bold;
-  }
+.nav-link {
+  color: var(--beige);
+  font-weight: bold;
+}
 
-  button {
-    background-color:var(--black);
-    border: 0;
-    padding: 1%;
-    color: var(--beige);
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+.nav-link:hover {
+  color: var(--gold);
+}
 
-  button:hover {
-    background-color: var(--gold);
-    color: var(--black);
-  }
-  
-  #button {
-    background-color:var(--beige);
-    border: 0;
-    padding: 1%;
-    color: var(--black);
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+label {
+  color: var(--black);
+  font-weight: bold;
+}
 
-  #button:hover{
-    background-color: var(--gold);
-  }
+button {
+  background-color: var(--black);
+  border: 0;
+  padding: 1%;
+  color: var(--beige);
+  font-weight: bold;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-  #comment-body {
-    font-size: x-large;
-    font-weight: bold;
-  }
+button:hover {
+  background-color: var(--gold);
+  color: var(--black);
+}
 
-  #add-comment{
-    color: var(--beige);
-  }
+#button {
+  background-color: var(--beige);
+  border: 0;
+  padding: 1%;
+  color: var(--black);
+  font-weight: bold;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-  #comment-section {
-   font-size: x-large;
-   font-weight: bold;
-  }
+#button:hover {
+  background-color: var(--gold);
+}
 
-  .your-post {
-    color: var(--beige);
-    font-weight: bold;
-  }
+#comment-body {
+  font-size: x-large;
+  font-weight: bold;
+}
 
-  .card {
-    background-color: var(--beige);
-  }
+#add-comment {
+  color: var(--beige);
+}
 
-  .card-title {
-    color:var(--black);
-    font-weight: bold;
-  }
+#comment-section {
+  font-size: x-large;
+  font-weight: bold;
+}
 
-  .card-link {
-    color:var(--black);
-    font-weight: bold;
-  }
+.your-post {
+  color: var(--beige);
+  font-weight: bold;
+}
 
-  .edit-link {
-    color:var(--black);
-    font-weight: bold;
-  }
+.card {
+  background-color: var(--beige);
+}
 
-  #email-login {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+.card-title {
+  color: var(--black);
+  font-weight: bold;
+}
 
-  #password-login{
-    color: var(--black);
-    font-size: x-large;
-  }
+.card-link {
+  color: var(--black);
+  font-weight: bold;
+}
 
-  #username-signup {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+.edit-link {
+  color: var(--black);
+  font-weight: bold;
+}
 
-  #email-signup {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+#email-login {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
 
-  #password-signup {
-    color: var(--black);
-    font-size: x-large;
-  }
+#password-login {
+  color: var(--black);
+  font-size: x-large;
+}
 
-  .blog-header {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+#username-signup {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
 
-  
-  #post-title {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+#email-signup {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
 
-  #post-content {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+#password-signup {
+  color: var(--black);
+  font-size: x-large;
+}
 
-  .edit-header {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
-  
-  #edit-text {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
-  
-  .post-title {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
-  
-  .created-at {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
-  
-  .card-subtitle {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+.blog-header {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
 
-  .subtitle {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+#post-title {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
 
-  .post-text {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
+#post-content {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
 
-  .comment-text {
-    color: var(--black);
-    font-weight: bold;
-    font-size: x-large;
-  }
-  
-  footer {
-    position: sticky;
-    /* bottom: 0; */
-    text-align: center;
-    width: 100%;
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    color: var(--beige);
-    font-weight: bold;
-    font-size: 110%;
-  }
+.edit-header {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#edit-text {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.post-title {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.created-at {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.card-subtitle {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.subtitle {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.post-text {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.comment-text {
+  color: var(--black);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+footer {
+  position: sticky;
+  /* bottom: 0; */
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  color: var(--beige);
+  font-weight: bold;
+  font-size: 110%;
+}

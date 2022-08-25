@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, Comment, User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //CRUD, create(post), recieve(get), update(put), delete(delete).
 
@@ -61,25 +62,25 @@ router.get("/:id", (req, res) => {
 });
 
 //route to create new post
-router.post('/', (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Post.create({
-      title: req.body.title,
-      post_text: req.body.post_text,
-      user_id: req.session.user_id
+    title: req.body.title,
+    post_text: req.body.post_text,
+    user_id: req.session.user_id,
   })
-  .then(dbPostData => res.json(dbPostData))
-  .catch(err => {
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
-  });
+    });
 });
 
 //route to update post using post id
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
-      post_text: req.body.post_text
+      post_text: req.body.post_text,
     },
     {
       where: {
@@ -103,16 +104,15 @@ router.put("/:id", (req, res) => {
 });
 
 //route to delete post by id
-router.delete("/:id", (req, res) => {
-  Post.detroy({
+router.delete("/:id", withAuth, (req, res) => {
+  Post.destroy({
     where: {
       id: req.params.id,
     },
   })
     .then((dbPostData) => {
-      //checks to see if actual post exists.
       if (!dbPostData) {
-        res.status(404).json({ message: "There is no post found by this id!" });
+        res.status(404).json({ message: "No post found with this id" });
         return;
       }
       res.json(dbPostData);

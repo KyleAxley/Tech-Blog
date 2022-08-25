@@ -28,7 +28,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      console.log(posts)
+      console.log(posts);
       res.render("dashboard", { posts, loggedIn: true });
     })
     .catch((err) => {
@@ -38,8 +38,7 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get("/edit/:id", withAuth, (req, res) => {
-  Post.findByPk(req.params.id,{
-
+  Post.findByPk(req.params.id, {
     attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {

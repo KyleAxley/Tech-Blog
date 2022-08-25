@@ -16,7 +16,7 @@ async function loginFormHandler(event) {
 
     if (response.ok) {
       console.log("success");
-      document.location.replace('/dashboard/');
+      document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
     }
@@ -27,5 +27,3 @@ async function loginFormHandler(event) {
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
-
-
