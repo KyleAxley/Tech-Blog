@@ -1,5 +1,5 @@
 const router = require("express").Router();
-// const sequelize = require("../../config/connection");
+const sequelize = require("../../config/connection");
 const { Post, Comment, User } = require("../../models");
 
 //CRUD, create(post), recieve(get), update(put), delete(delete).
@@ -8,7 +8,7 @@ const { Post, Comment, User } = require("../../models");
 router.get("/", (req, res) => {
   Post.findAll({
     attributes: ["id", "post_text", "title", "created_at"],
-    order: ['created_at', 'DESC'],
+    // order: ['created_at', 'DESC'],
     include: [
       {
         model: Comment,
@@ -79,6 +79,7 @@ router.put("/:id", (req, res) => {
   Post.update(
     {
       title: req.body.title,
+      post_text: req.body.post_text
     },
     {
       where: {

@@ -157,6 +157,12 @@ html {
     font-weight: bold;
     font-size: x-large;
   }
+
+  #post-content {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
   
   .post-title {
     color: var(--black);
