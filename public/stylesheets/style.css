@@ -163,6 +163,18 @@ html {
     font-weight: bold;
     font-size: x-large;
   }
+
+  .edit-header {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
+  #edit-text {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+  }
   
   .post-title {
     color: var(--black);
