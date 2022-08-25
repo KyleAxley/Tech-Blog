@@ -28,6 +28,6 @@ Once the packages are installed you will then run "mysql -u root -p" in the comm
 ![Tech-Blog SS 3](https://user-images.githubusercontent.com/103543572/186728287-c5ecfbc4-c939-4fd1-90f8-0785f9118cd0.png)
 
 ## Lesson Learned 
-This was the most extensive challenge that we were tasked to build so far. It was definitly a true test to sharpen our skills in the full-stack tool box. Some personal lessons learned was definitly double checking small typo errors that would break the site or making sure closing If statment tags were in the correct position while using handlebars templates. At certain points the project was very daunting but as progression was made, "walk-away" momnets and errors corrected the sense of the project wrapping up and seeing it finally coming together was truely gratifying!  
+This was the most extensive challenge that we were tasked to build so far. It was definitly a true test to sharpen our skills in the full-stack tool box. Some personal lessons learned was definitly double checking small typo errors that would break the site or making sure closing If statment tags were in the correct position while using handlebars templates. At certain points the project was very daunting but as progression was made, "walk-away" moments had and errors corrected, the sense of the project wrapping up and seeing it finally coming together was truely gratifying!  
 
 
