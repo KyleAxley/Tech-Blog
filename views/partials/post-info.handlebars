@@ -4,10 +4,10 @@
         <div class="card-body">
             <article class="container-fluid">
                 <div class="post-info">
-                    <p class="post-title">{{title}}</p>
-                    <p class="subtitle">{{created_at}} by {{user.username}}</p>
-                    <p class="post-text">{{post_text}}</p>
-                    <a href="/post/{{id}}" class="edit-link">{{comments.length}} {{comments.length}} comment(s)</a>
+                    <p class="post-title">{{post.title}}</p>
+                    <p class="subtitle">{{format_date post.created_at}} by {{post.user.username}}</p>
+                    <p class="post-text">{{format_length post.post_text}}</p>
+                    <a href="/post/{{id}}" class="edit-link">{{post.comments.length}} comment(s)</a>
                     <div class="separator">
                         <hr>
                     </div>

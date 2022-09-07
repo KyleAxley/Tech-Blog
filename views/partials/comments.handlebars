@@ -15,7 +15,7 @@
                     {{#each post.comments as |comment|}}
                     <li class="list-group-item">
                         <p class="comment-text">{{comment.comment_text}}</p>
-                        <p>{{comment.created_at}} by {{comment.user.username}}</p>
+                        <p>{{format_date comment.created_at}} by {{comment.user.username}}</p>
                     </li>
                     {{/each}}
                 </ul>
