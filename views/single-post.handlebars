@@ -1,25 +1,17 @@
-{{> post-info post}}
-
-
-<section class="container-fluid mb-3" id="comment-box">
-    <div class="row">
-        <div class="col col-md-6">
-            {{#if loggedIn}}
-            <form class="comment-form">
-                <div class="mb-3">
-                    <label for="comment-body" id="add-comment" class="form-label">Add comment</label>
-                    <textarea name="comment-body" id="comment-body" rows="3" class="form-control"></textarea>
-                    <button type="submit" id="button">add comment</button>
-                </div>
-            </form>
-            {{/if}}
-
-{{> comments}}
-
+<section class="card-group col-6">
+    <div class="card">
+        <div class="card-body mb-3" id="post-title">
+            <div class="post-info">
+                <h2 class="post-title">{{post.title}}</h2>
+                <h3 class="created-at">{{post.created_at}} by {{post.user.username}}</h3>
+            </div>
+            <div class="post-text">
+                {{post.post_text}}
+            </div>
         </div>
     </div>
 </section>
+{{> comments}}
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}}
+
+

@@ -1,10 +1,29 @@
-<div class="comments mt-3" id="comment-section">
-    <ul class="list-group">
-        {{#each post.comments as |comment|}}
-        <li class="list-group-item">
-            <p class="comment-text">{{comment.comment_text}}</p>
-            <p>{{comment.created_at}} by {{comment.user.username}}</p>
-        </li>
-        {{/each}}
-    </ul>
-</div>
+<section class="container-fluid mb-3" id="comment-box">
+    <div class="row">
+        <div class="col col-md-6">
+            {{#if loggedIn}}
+            <form class="comment-form">
+                <div class="mb-3">
+                    <label for="comment-body" id="add-comment" class="form-label">Comment below</label>
+                    <textarea name="comment-body" id="comment-body" rows="3" class="form-control"></textarea>
+                    <button type="submit" id="button">add comment</button>
+                </div>
+            </form>
+            {{/if}}
+            <div class="comments mt-3" id="comment-section">
+                <ul class="list-group">
+                    {{#each post.comments as |comment|}}
+                    <li class="list-group-item">
+                        <p class="comment-text">{{comment.comment_text}}</p>
+                        <p>{{comment.created_at}} by {{comment.user.username}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>    
+</section>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

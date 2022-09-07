@@ -21,11 +21,9 @@
 </div>
 
 {{#if posts.length}}
-{{#each posts as |post|}}
 <h2 class="your-post">Your Posts</h2>
 <li>
-    {{> post-info post}}
+    {{> post-info}}
 </li>
-{{/each}}
 {{/if}}
 <script src="/javascript/add-post.js"></script>
