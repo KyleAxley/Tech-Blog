@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const Post = require ('./Post')
-const User = require ('./Post')
+const User = require ('./User')
 
 class Comment extends Model {}
 
@@ -16,16 +16,15 @@ Comment.init(
     comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: User,
         key: 'id'
-      }
+      },
+      onDelete: 'cascade'
     },
     post_id: {
       type: DataTypes.INTEGER,
@@ -33,6 +32,10 @@ Comment.init(
         model: Post,
         key: 'id'
       },
+      onDelete: 'cascade',
+      validate: {
+        len: [1]
+      }
     }
   },
   {

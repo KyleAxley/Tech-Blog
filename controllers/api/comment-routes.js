@@ -74,7 +74,7 @@ router.post("/", withAuth, (req, res) => {
 });
 
 //route to update a comment
-router.put("/:id", withAuth, (req, res) => {
+router.put("/:id", (req, res) => {
   Comment.update(
     {
       comment_text: req.body.comment_text,

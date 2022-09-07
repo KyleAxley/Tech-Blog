@@ -11,7 +11,6 @@ async function editFormHandler(event) {
   const response = await fetch(`/api/posts/${id}`, {
     method: "PUT",
     body: JSON.stringify({
-      // post_id: id,
       title,
       post_text,
     }),
@@ -26,7 +25,6 @@ async function editFormHandler(event) {
     alert(response.statusText);
   }
 
-  console.log('confirmed click')
 }
 
 document

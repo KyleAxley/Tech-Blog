@@ -10,7 +10,6 @@
                 <div>
                     <label class="form-label" for="post-content">Content</label>
                     <textarea name="post-content" id="post-content" class="form-control">{{post.post_text}}</textarea>
-                    {{!-- <input name="content" type="text" value="{{post.content}}" class="form-control" id="edit-text" /> --}}
                 </div>
                 <div>
                     <button type="submit" class="button" id="edit-post">Update Post</button>
@@ -21,7 +20,7 @@
     </div>
 </div>
 
-<section>
+<section class="container mx-auto">
     {{> comments}}
 </section>
 
